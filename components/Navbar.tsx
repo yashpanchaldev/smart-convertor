@@ -6,19 +6,23 @@ import { useTheme } from "./ThemeProvider";
 const pdfLinks = [
   { label: "Text → PDF",      href: "/tools/text-to-pdf" },
   { label: "PDF → Text",      href: "/tools/pdf-to-text" },
+  { label: "PDF → Word",      href: "/tools/pdf-to-word" },
   { label: "DOC → PDF",       href: "/tools/doc-to-pdf" },
   { label: "HTML → PDF",      href: "/tools/html-to-pdf" },
   { label: "PDF Merge",       href: "/tools/pdf-merge" },
   { label: "PDF Split",       href: "/tools/pdf-split" },
   { label: "PDF Compress ⭐", href: "/tools/pdf-compress" },
+  { label: "PDF Rotate",      href: "/tools/pdf-rotate" },
   { label: "PDF → Image",     href: "/tools/pdf-to-image" },
 ];
 
 const imageLinks = [
   { label: "Image → PDF",       href: "/tools/image-to-pdf" },
+  { label: "Image → Text (OCR)",href: "/tools/image-to-text" },
   { label: "Image Compress ⭐", href: "/tools/image-compress" },
   { label: "Resize Image",      href: "/tools/image-resize" },
   { label: "JPG ↔ PNG",         href: "/tools/image-convert" },
+  { label: "QR Code Generator", href: "/tools/qr-code" },
 ];
 
 export default function Navbar() {

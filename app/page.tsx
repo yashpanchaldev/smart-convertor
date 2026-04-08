@@ -25,12 +25,17 @@ const pdfTools = [
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="8" y1="13" x2="16" y2="13" /><line x1="8" y1="17" x2="16" y2="17" /></svg>,
   },
   {
+    title: "PDF to Word", href: "/tools/pdf-to-word", badge: "New",
+    description: "Convert PDF files to editable .docx Word documents instantly.",
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" /><polyline points="13 2 13 9 20 9" /><line x1="9" y1="14" x2="15" y2="14" /><line x1="9" y1="17" x2="13" y2="17" /></svg>,
+  },
+  {
     title: "DOC to PDF", href: "/tools/doc-to-pdf",
     description: "Convert Word .docx documents to PDF with formatting intact.",
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" /><polyline points="13 2 13 9 20 9" /></svg>,
   },
   {
-    title: "HTML to PDF", href: "/tools/html-to-pdf", badge: "New",
+    title: "HTML to PDF", href: "/tools/html-to-pdf",
     description: "Render any HTML snippet or page into a pixel-perfect PDF.",
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
   },
@@ -54,6 +59,11 @@ const pdfTools = [
     description: "Export every PDF page as a high-quality JPG or PNG image.",
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>,
   },
+  {
+    title: "PDF Rotate", href: "/tools/pdf-rotate",
+    description: "Rotate all pages in a PDF by 90°, 180°, or 270° in one click.",
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><polyline points="23 4 23 10 17 10" /><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" /></svg>,
+  },
 ];
 
 const imageTools = [
@@ -61,6 +71,11 @@ const imageTools = [
     title: "Image to PDF", href: "/tools/image-to-pdf",
     description: "Combine JPG, PNG, or WebP images into a single PDF.",
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>,
+  },
+  {
+    title: "Image to Text (OCR)", href: "/tools/image-to-text", badge: "New",
+    description: "Extract text from any image using OCR. Supports JPG, PNG, WebP.",
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="2" /><line x1="8" y1="9" x2="16" y2="9" /><line x1="8" y1="13" x2="14" y2="13" /><line x1="8" y1="17" x2="12" y2="17" /></svg>,
   },
   {
     title: "Image Compress", href: "/tools/image-compress", badge: "🔥 Hot",
@@ -77,12 +92,17 @@ const imageTools = [
     description: "Convert between JPG, PNG, and WebP formats in one click.",
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><polyline points="17 1 21 5 17 9" /><path d="M3 11V9a4 4 0 0 1 4-4h14" /><polyline points="7 23 3 19 7 15" /><path d="M21 13v2a4 4 0 0 1-4 4H3" /></svg>,
   },
+  {
+    title: "QR Code Generator", href: "/tools/qr-code", badge: "New",
+    description: "Generate a QR code for any URL or text. Download as PNG instantly.",
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="3" height="3" /><line x1="19" y1="14" x2="21" y2="14" /><line x1="19" y1="17" x2="21" y2="17" /><line x1="19" y1="20" x2="21" y2="20" /></svg>,
+  },
 ];
 
 /* ─── Static content ────────────────────────────────────────────────────── */
 
 const stats = [
-  { value: "13", label: "Free tools" },
+  { value: "17", label: "Free tools" },
   { value: "100%", label: "Browser-based" },
   { value: "0 KB", label: "Data stored" },
   { value: "< 5s", label: "Avg. speed" },
@@ -93,7 +113,7 @@ const features = [
   { icon: "⚡", title: "Instant Results", desc: "Client-side processing — no upload wait, no server queue." },
   { icon: "🆓", title: "Always Free", desc: "No subscriptions, no limits, no credit card needed. Ever." },
   { icon: "🌐", title: "Works Everywhere", desc: "Any browser, any OS — Chrome, Safari, Firefox, Edge, mobile." },
-  { icon: "📁", title: "13 File Tools", desc: "PDF, images, documents — all conversion tools in one place." },
+  { icon: "📁", title: "17 File Tools", desc: "PDF, images, documents — all conversion tools in one place." },
   { icon: "🚀", title: "WebAssembly Speed", desc: "Native-speed conversions powered by Wasm technology." },
 ];
 
@@ -139,7 +159,7 @@ const faqs = [
   },
   {
     q: "What file formats does SmartConverter support?",
-    a: "We support PDF, DOCX, HTML, plain text, JPG, PNG, and WebP. Convert between formats, compress, merge, split, or resize — all from your browser.",
+    a: "We support PDF, DOCX, HTML, plain text, JPG, PNG, and WebP. Convert between formats, compress, merge, split, rotate, extract text via OCR, and generate QR codes — all from your browser.",
   },
   {
     q: "How fast is the conversion?",

@@ -3,10 +3,12 @@ import Link from "next/link";
 const toolLinks = [
   { label: "Text to PDF",      href: "/tools/text-to-pdf" },
   { label: "PDF to Text",      href: "/tools/pdf-to-text" },
+  { label: "PDF to Word",      href: "/tools/pdf-to-word" },
   { label: "PDF Compress",     href: "/tools/pdf-compress" },
   { label: "Image Compress",   href: "/tools/image-compress" },
+  { label: "Image to Text",    href: "/tools/image-to-text" },
   { label: "PDF Merge",        href: "/tools/pdf-merge" },
-  { label: "Image to PDF",     href: "/tools/image-to-pdf" },
+  { label: "QR Code Generator",href: "/tools/qr-code" },
 ];
 
 export default function Footer() {
