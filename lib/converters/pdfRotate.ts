@@ -1,12 +1,14 @@
 /**
  * PDF Rotate — client-side via pdf-lib
  */
+import { uint8ToBlob } from "@/lib/utils";
+
 export type RotateAngle = 90 | 180 | 270;
 
 export async function rotatePdf(
   file: File,
   angle: RotateAngle,
-  pageIndices?: number[] // undefined = all pages
+  pageIndices?: number[]
 ): Promise<Blob> {
   const { PDFDocument, degrees } = await import("pdf-lib");
 
@@ -24,5 +26,5 @@ export async function rotatePdf(
   }
 
   const bytes = await pdfDoc.save();
-  return new Blob([bytes], { type: "application/pdf" });
+  return uint8ToBlob(bytes, "application/pdf");
 }

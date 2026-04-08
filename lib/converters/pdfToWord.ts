@@ -3,11 +3,13 @@
  * Extracts text from PDF pages via pdf.js and builds a plain .docx using docx.js
  */
 export async function pdfToWord(file: File): Promise<Blob> {
-  const [{ getDocument, GlobalWorkerOptions }, { Document, Packer, Paragraph, TextRun, HeadingLevel }] =
+  const [{ getDocument, GlobalWorkerOptions }, docx] =
     await Promise.all([
       import("pdfjs-dist"),
       import("docx"),
     ]);
+
+  const { Document, Packer, Paragraph, TextRun, HeadingLevel } = docx;
 
   GlobalWorkerOptions.workerSrc = new URL(
     "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -17,7 +19,8 @@ export async function pdfToWord(file: File): Promise<Blob> {
   const arrayBuffer = await file.arrayBuffer();
   const pdf = await getDocument({ data: arrayBuffer }).promise;
 
-  const paragraphs: Paragraph[] = [
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const paragraphs: InstanceType<typeof Paragraph>[] = [
     new Paragraph({
       text: file.name.replace(/\.pdf$/i, ""),
       heading: HeadingLevel.HEADING_1,

@@ -22,7 +22,7 @@ export async function pdfToImages(
     canvas.width = viewport.width;
     canvas.height = viewport.height;
     const ctx = canvas.getContext("2d")!;
-    await page.render({ canvasContext: ctx, viewport }).promise;
+    await page.render({ canvasContext: ctx, viewport, canvas }).promise;
     results.push({
       dataUrl: canvas.toDataURL(format === "jpeg" ? "image/jpeg" : "image/png", 0.92),
       page: i,

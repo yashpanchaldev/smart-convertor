@@ -1,4 +1,5 @@
 import { PDFDocument } from "pdf-lib";
+import { uint8ToBlob } from "@/lib/utils";
 
 export async function mergePdfs(files: File[]): Promise<Blob> {
   const merged = await PDFDocument.create();
@@ -11,5 +12,5 @@ export async function mergePdfs(files: File[]): Promise<Blob> {
   }
 
   const bytes = await merged.save();
-  return new Blob([bytes], { type: "application/pdf" });
+  return uint8ToBlob(bytes, "application/pdf");
 }

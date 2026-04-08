@@ -1,4 +1,5 @@
 import { PDFDocument } from "pdf-lib";
+import { uint8ToBlob } from "@/lib/utils";
 
 export async function imagesToPdf(files: File[]): Promise<Blob> {
   const doc = await PDFDocument.create();
@@ -13,7 +14,6 @@ export async function imagesToPdf(files: File[]): Promise<Blob> {
     } else if (mime === "image/png") {
       img = await doc.embedPng(bytes);
     } else {
-      // Convert to PNG via canvas for other formats
       const blob = await convertToBlob(file, "image/png");
       const pngBytes = await blob.arrayBuffer();
       img = await doc.embedPng(pngBytes);
@@ -24,7 +24,7 @@ export async function imagesToPdf(files: File[]): Promise<Blob> {
   }
 
   const bytes = await doc.save();
-  return new Blob([bytes.buffer.slice(0)], { type: "application/pdf" });
+  return uint8ToBlob(bytes, "application/pdf");
 }
 
 function convertToBlob(file: File, mimeType: string): Promise<Blob> {

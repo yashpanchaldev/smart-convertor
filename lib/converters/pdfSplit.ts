@@ -1,4 +1,5 @@
 import { PDFDocument } from "pdf-lib";
+import { uint8ToBlob } from "@/lib/utils";
 
 export interface SplitResult {
   blob: Blob;
@@ -17,7 +18,6 @@ export async function splitPdf(
   for (let i = 0; i < ranges.length; i++) {
     const { from, to } = ranges[i];
     const doc = await PDFDocument.create();
-    // pages are 1-indexed in UI, 0-indexed in pdf-lib
     const indices = Array.from(
       { length: to - from + 1 },
       (_, k) => from - 1 + k
@@ -28,7 +28,7 @@ export async function splitPdf(
 
     const outBytes = await doc.save();
     results.push({
-      blob: new Blob([outBytes], { type: "application/pdf" }),
+      blob: uint8ToBlob(outBytes, "application/pdf"),
       name: `split-part-${i + 1}.pdf`,
       pages: copied.length,
     });
