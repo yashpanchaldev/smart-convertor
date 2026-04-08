@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Smart Converter Toolkit – Convert Files Instantly",
   description:
     "Free online file converter. Convert Text to PDF, PDF to Text, DOC to PDF, HTML to PDF. No signup required. Files auto-deleted after processing.",
+  verification: {
+    google: "B74z6DyxgoGRoMNAF5F0Ou1vAiVG05hoHHqppna-swM",
+  },
 };
 
 export default function RootLayout({
