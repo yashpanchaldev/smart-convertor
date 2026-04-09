@@ -40,6 +40,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/logo.svg",
+  },
   verification: {
     google: "B74z6DyxgoGRoMNAF5F0Ou1vAiVG05hoHHqppna-swM",
   },

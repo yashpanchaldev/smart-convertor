@@ -17,12 +17,17 @@ const pdfLinks = [
 ];
 
 const imageLinks = [
-  { label: "Image → PDF",       href: "/tools/image-to-pdf" },
-  { label: "Image → Text (OCR)",href: "/tools/image-to-text" },
-  { label: "Image Compress ⭐", href: "/tools/image-compress" },
-  { label: "Resize Image",      href: "/tools/image-resize" },
-  { label: "JPG ↔ PNG",         href: "/tools/image-convert" },
-  { label: "QR Code Generator", href: "/tools/qr-code" },
+  { label: "Image → PDF",        href: "/tools/image-to-pdf" },
+  { label: "Image → Text (OCR)", href: "/tools/image-to-text" },
+  { label: "Image Compress ⭐",  href: "/tools/image-compress" },
+  { label: "Resize Image",       href: "/tools/image-resize" },
+  { label: "JPG ↔ PNG",          href: "/tools/image-convert" },
+  { label: "JPG → PNG",          href: "/tools/jpg-to-png" },
+  { label: "PNG → JPG",          href: "/tools/png-to-jpg" },
+  { label: "PNG → WebP",         href: "/tools/png-to-webp" },
+  { label: "SVG → PNG",          href: "/tools/svg-to-png" },
+  { label: "Image → SVG",        href: "/tools/image-to-svg" },
+  { label: "QR Code Generator",  href: "/tools/qr-code" },
 ];
 
 export default function Navbar() {
@@ -32,8 +37,13 @@ export default function Navbar() {
       style={{ background: "color-mix(in srgb, var(--background) 80%, transparent)", borderColor: "var(--border)" }}>
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between" style={{ height: 56 }}>
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-xl flex items-center justify-center text-white text-xs font-bold transition-transform group-hover:scale-105"
-            style={{ background: "linear-gradient(135deg, var(--accent), #a78bfa)" }}>SC</div>
+          <img
+            src="/logo.svg"
+            alt="SmartConverter logo"
+            width={32}
+            height={32}
+            className="rounded-xl transition-transform group-hover:scale-105"
+          />
           <span className="font-semibold text-sm tracking-tight" style={{ color: "var(--foreground)" }}>
             Smart<span style={{ color: "var(--accent)" }}>Converter</span>
           </span>

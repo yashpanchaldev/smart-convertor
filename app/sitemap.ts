@@ -19,6 +19,11 @@ const tools = [
   "/tools/image-resize",
   "/tools/image-convert",
   "/tools/qr-code",
+  "/tools/jpg-to-png",
+  "/tools/png-to-jpg",
+  "/tools/png-to-webp",
+  "/tools/svg-to-png",
+  "/tools/image-to-svg",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

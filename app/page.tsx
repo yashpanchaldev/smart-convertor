@@ -89,11 +89,36 @@ const imageTools = [
   },
   {
     title: "JPG ↔ PNG", href: "/tools/image-convert",
-    description: "Convert between JPG, PNG, and WebP formats in one click.",
+    description: "Convert between JPG, PNG, WebP and SVG formats in one click.",
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><polyline points="17 1 21 5 17 9" /><path d="M3 11V9a4 4 0 0 1 4-4h14" /><polyline points="7 23 3 19 7 15" /><path d="M21 13v2a4 4 0 0 1-4 4H3" /></svg>,
   },
   {
-    title: "QR Code Generator", href: "/tools/qr-code", badge: "New",
+    title: "JPG to PNG", href: "/tools/jpg-to-png", badge: "New",
+    description: "Convert JPG images to PNG format. Preserves transparency instantly.",
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>,
+  },
+  {
+    title: "PNG to JPG", href: "/tools/png-to-jpg", badge: "New",
+    description: "Convert PNG images to JPG. White background applied automatically.",
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>,
+  },
+  {
+    title: "PNG to WebP", href: "/tools/png-to-webp", badge: "New",
+    description: "Convert PNG to WebP for smaller file sizes with same quality.",
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><polyline points="17 1 21 5 17 9" /><path d="M3 11V9a4 4 0 0 1 4-4h14" /><polyline points="7 23 3 19 7 15" /><path d="M21 13v2a4 4 0 0 1-4 4H3" /></svg>,
+  },
+  {
+    title: "SVG to PNG", href: "/tools/svg-to-png", badge: "New",
+    description: "Convert SVG vector files to PNG images instantly in your browser.",
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
+  },
+  {
+    title: "Image to SVG", href: "/tools/image-to-svg", badge: "New",
+    description: "Wrap JPG, PNG, or WebP images inside an SVG container instantly.",
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
+  },
+  {
+    title: "QR Code Generator", href: "/tools/qr-code",
     description: "Generate a QR code for any URL or text. Download as PNG instantly.",
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="3" height="3" /><line x1="19" y1="14" x2="21" y2="14" /><line x1="19" y1="17" x2="21" y2="17" /><line x1="19" y1="20" x2="21" y2="20" /></svg>,
   },
@@ -102,7 +127,7 @@ const imageTools = [
 /* ─── Static content ────────────────────────────────────────────────────── */
 
 const stats = [
-  { value: "17", label: "Free tools" },
+  { value: "22", label: "Free tools" },
   { value: "100%", label: "Browser-based" },
   { value: "0 KB", label: "Data stored" },
   { value: "< 5s", label: "Avg. speed" },
@@ -113,7 +138,7 @@ const features = [
   { icon: "⚡", title: "Instant Results", desc: "Client-side processing — no upload wait, no server queue." },
   { icon: "🆓", title: "Always Free", desc: "No subscriptions, no limits, no credit card needed. Ever." },
   { icon: "🌐", title: "Works Everywhere", desc: "Any browser, any OS — Chrome, Safari, Firefox, Edge, mobile." },
-  { icon: "📁", title: "17 File Tools", desc: "PDF, images, documents — all conversion tools in one place." },
+  { icon: "📁", title: "22 File Tools", desc: "PDF, images, documents — all conversion tools in one place." },
   { icon: "🚀", title: "WebAssembly Speed", desc: "Native-speed conversions powered by Wasm technology." },
 ];
 

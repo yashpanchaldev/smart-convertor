@@ -20,8 +20,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-3">
-              <div className="w-8 h-8 rounded-xl flex items-center justify-center text-white text-xs font-bold"
-                style={{ background: "linear-gradient(135deg, var(--accent), #a78bfa)" }}>SC</div>
+              <img src="/logo.svg" alt="SmartConverter logo" width={32} height={32} className="rounded-xl" />
               <span className="font-semibold text-sm" style={{ color: "var(--foreground)" }}>
                 Smart<span style={{ color: "var(--accent)" }}>Converter</span>
               </span>
