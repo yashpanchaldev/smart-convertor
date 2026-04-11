@@ -2,7 +2,10 @@ import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://smart-convertor.vercel.app";
 
-const tools = [
+// Fixed date string — avoids Date serialization issues across Next.js versions
+const LAST_MODIFIED = "2025-04-11";
+
+const toolPaths = [
   "/tools/text-to-pdf",
   "/tools/pdf-to-text",
   "/tools/pdf-to-word",
@@ -27,35 +30,30 @@ const tools = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
-  const staticRoutes: MetadataRoute.Sitemap = [
+  return [
     {
       url: BASE_URL,
-      lastModified: now,
+      lastModified: LAST_MODIFIED,
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
       url: `${BASE_URL}/privacy`,
-      lastModified: now,
+      lastModified: LAST_MODIFIED,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${BASE_URL}/terms`,
-      lastModified: now,
+      lastModified: LAST_MODIFIED,
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    ...toolPaths.map((path) => ({
+      url: `${BASE_URL}${path}`,
+      lastModified: LAST_MODIFIED,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
   ];
-
-  const toolRoutes: MetadataRoute.Sitemap = tools.map((path) => ({
-    url: `${BASE_URL}${path}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
-
-  return [...staticRoutes, ...toolRoutes];
 }
