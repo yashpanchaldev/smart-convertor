@@ -1,59 +1,53 @@
 const BASE_URL = "https://smart-convertor.vercel.app";
-const LAST_MODIFIED = "2025-04-11";
 
-const toolPaths = [
-  "/tools/text-to-pdf",
-  "/tools/pdf-to-text",
-  "/tools/pdf-to-word",
-  "/tools/doc-to-pdf",
-  "/tools/html-to-pdf",
-  "/tools/pdf-merge",
-  "/tools/pdf-split",
-  "/tools/pdf-compress",
-  "/tools/pdf-to-image",
-  "/tools/pdf-rotate",
-  "/tools/image-to-pdf",
-  "/tools/image-to-text",
-  "/tools/image-compress",
-  "/tools/image-resize",
-  "/tools/image-convert",
-  "/tools/qr-code",
-  "/tools/jpg-to-png",
-  "/tools/png-to-jpg",
-  "/tools/png-to-webp",
-  "/tools/svg-to-png",
-  "/tools/image-to-svg",
+const urls = [
+  { loc: BASE_URL,                                    changefreq: "weekly",  priority: "1.0" },
+  { loc: `${BASE_URL}/privacy`,                       changefreq: "yearly",  priority: "0.3" },
+  { loc: `${BASE_URL}/terms`,                         changefreq: "yearly",  priority: "0.3" },
+  { loc: `${BASE_URL}/tools/text-to-pdf`,             changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/pdf-to-text`,             changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/pdf-to-word`,             changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/doc-to-pdf`,              changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/html-to-pdf`,             changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/pdf-merge`,               changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/pdf-split`,               changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/pdf-compress`,            changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/pdf-to-image`,            changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/pdf-rotate`,              changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/image-to-pdf`,            changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/image-to-text`,           changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/image-compress`,          changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/image-resize`,            changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/image-convert`,           changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/qr-code`,                 changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/jpg-to-png`,              changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/png-to-jpg`,              changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/png-to-webp`,             changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/svg-to-png`,              changefreq: "monthly", priority: "0.8" },
+  { loc: `${BASE_URL}/tools/image-to-svg`,            changefreq: "monthly", priority: "0.8" },
 ];
 
-const pages = [
-  { url: BASE_URL, priority: "1.0", changefreq: "weekly" },
-  { url: `${BASE_URL}/privacy`, priority: "0.3", changefreq: "yearly" },
-  { url: `${BASE_URL}/terms`, priority: "0.3", changefreq: "yearly" },
-  ...toolPaths.map((path) => ({
-    url: `${BASE_URL}${path}`,
-    priority: "0.8",
-    changefreq: "monthly",
-  })),
-];
+const LASTMOD = "2025-04-14";
 
-export function GET() {
+export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages
+${urls
   .map(
-    ({ url, priority, changefreq }) => `  <url>
-    <loc>${url}</loc>
-    <lastmod>${LAST_MODIFIED}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
+    (u) => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${LASTMOD}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
   </url>`
   )
   .join("\n")}
 </urlset>`;
 
   return new Response(xml, {
+    status: 200,
     headers: {
-      "Content-Type": "application/xml",
+      "Content-Type": "application/xml; charset=utf-8",
       "Cache-Control": "public, max-age=86400, stale-while-revalidate=43200",
     },
   });
