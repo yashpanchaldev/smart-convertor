@@ -45,8 +45,8 @@ export const metadata: Metadata = {
     apple: "/logo.svg",
   },
   verification: {
-    google: "ZnhQpg5poOh-EgE7wZm8B4FEFruaWTycs63IUPT3Rw0",
-    // google-site-verification=ZnhQpg5poOh-EgE7wZm8B4FEFruaWTycs63IUPT3Rw0
+    google: "B74z6DyxgoGRoMNAF5F0Ou1vAiVG05hoHHqppna-swM",
+    
   },
   openGraph: {
     type: "website",
