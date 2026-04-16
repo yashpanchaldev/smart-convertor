@@ -62,7 +62,7 @@ export default function Footer() {
               Company
             </p>
             <ul className="space-y-2.5 mb-6">
-              {[{ label: "Privacy Policy", href: "/privacy" }, { label: "Terms of Service", href: "/terms" }].map((l) => (
+              {[{ label: "Blog", href: "/blog" }, { label: "Privacy Policy", href: "/privacy" }, { label: "Terms of Service", href: "/terms" }].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href}
                     className="text-sm transition-colors hover:opacity-80 flex items-center gap-2"

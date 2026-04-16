@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0f1a"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff08" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Glow -->
+  <ellipse cx="600" cy="200" rx="400" ry="200" fill="#6366f120"/>
+
+  <!-- Logo icon -->
+  <rect x="80" y="80" width="80" height="80" rx="20" fill="url(#accent)"/>
+  <path d="M100 108 Q100 100 108 100 L120 100 Q128 100 128 108 Q128 116 120 120 L108 122 Q100 126 100 134 Q100 142 108 142 L128 142"
+        fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <path d="M148 104 Q140 96 130 98 Q120 100 120 120 Q120 140 130 142 Q140 144 148 136"
+        fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Site name -->
+  <text x="180" y="132" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="700" fill="white">Smart</text>
+  <text x="290" y="132" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="700" fill="url(#accent)">Converter</text>
+
+  <!-- Headline -->
+  <text x="80" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="800" fill="white">Free Online</text>
+  <text x="80" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="800" fill="url(#accent)">File Converter</text>
+
+  <!-- Subtext -->
+  <text x="80" y="410" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#94a3b8">
+    24 tools · PDF · Images · Documents · Developer Tools
+  </text>
+
+  <!-- Pills -->
+  <rect x="80" y="460" width="180" height="44" rx="22" fill="#6366f120" stroke="#6366f140" stroke-width="1"/>
+  <text x="170" y="488" font-family="system-ui, sans-serif" font-size="18" fill="#a78bfa" text-anchor="middle">No Signup</text>
+
+  <rect x="276" y="460" width="180" height="44" rx="22" fill="#6366f120" stroke="#6366f140" stroke-width="1"/>
+  <text x="366" y="488" font-family="system-ui, sans-serif" font-size="18" fill="#a78bfa" text-anchor="middle">No Uploads</text>
+
+  <rect x="472" y="460" width="180" height="44" rx="22" fill="#6366f120" stroke="#6366f140" stroke-width="1"/>
+  <text x="562" y="488" font-family="system-ui, sans-serif" font-size="18" fill="#a78bfa" text-anchor="middle">100% Free</text>
+
+  <!-- URL -->
+  <text x="80" y="580" font-family="system-ui, sans-serif" font-size="22" fill="#475569">smart-convertor.vercel.app</text>
+</svg>

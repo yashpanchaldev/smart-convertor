@@ -1,12 +1,15 @@
 import AdSlot from "./AdSlot";
+import RelatedTools from "./RelatedTools";
+import type { RelatedTool } from "@/lib/relatedTools";
 
 interface ToolLayoutProps {
   title: string;
   description: string;
   children: React.ReactNode;
+  relatedTools?: RelatedTool[];
 }
 
-export default function ToolLayout({ title, description, children }: ToolLayoutProps) {
+export default function ToolLayout({ title, description, children, relatedTools }: ToolLayoutProps) {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       <div className="flex gap-8">
@@ -23,6 +26,10 @@ export default function ToolLayout({ title, description, children }: ToolLayoutP
           {children}
           {/* Ad below result */}
           <AdSlot label="Advertisement · 728×90" height={90} className="mt-10" />
+          {/* Related tools */}
+          {relatedTools && relatedTools.length > 0 && (
+            <RelatedTools tools={relatedTools} />
+          )}
         </div>
 
         {/* Sidebar ad (desktop only) */}

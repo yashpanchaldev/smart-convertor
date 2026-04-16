@@ -124,10 +124,23 @@ const imageTools = [
   },
 ];
 
+const devTools = [
+  {
+    title: "JSON Formatter", href: "/tools/json-formatter", badge: "New",
+    description: "Format, beautify, minify and validate JSON instantly in your browser.",
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
+  },
+  {
+    title: "Base64 Encode/Decode", href: "/tools/base64", badge: "New",
+    description: "Encode text to Base64 or decode Base64 strings back to plain text.",
+    icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z" /></svg>,
+  },
+];
+
 /* ─── Static content ────────────────────────────────────────────────────── */
 
 const stats = [
-  { value: "22", label: "Free tools" },
+  { value: "24", label: "Free tools" },
   { value: "100%", label: "Browser-based" },
   { value: "0 KB", label: "Data stored" },
   { value: "< 5s", label: "Avg. speed" },
@@ -138,7 +151,7 @@ const features = [
   { icon: "⚡", title: "Instant Results", desc: "Client-side processing — no upload wait, no server queue." },
   { icon: "🆓", title: "Always Free", desc: "No subscriptions, no limits, no credit card needed. Ever." },
   { icon: "🌐", title: "Works Everywhere", desc: "Any browser, any OS — Chrome, Safari, Firefox, Edge, mobile." },
-  { icon: "📁", title: "22 File Tools", desc: "PDF, images, documents — all conversion tools in one place." },
+  { icon: "📁", title: "24 File Tools", desc: "PDF, images, documents & developer tools — all in one place." },
   { icon: "🚀", title: "WebAssembly Speed", desc: "Native-speed conversions powered by Wasm technology." },
 ];
 
@@ -317,6 +330,9 @@ export default function HomePage() {
 
       {/* ── Image Tools ── */}
       <ToolSection title="Image Tools" count={imageTools.length} tools={imageTools} />
+
+      {/* ── Developer Tools ── */}
+      <ToolSection title="Developer Tools" count={devTools.length} tools={devTools} />
 
       {/* ── Use Cases ── */}
       <section aria-label="Use cases" className="pb-16">

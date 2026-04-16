@@ -30,6 +30,11 @@ const imageLinks = [
   { label: "QR Code Generator",  href: "/tools/qr-code" },
 ];
 
+const devLinks = [
+  { label: "JSON Formatter",      href: "/tools/json-formatter" },
+  { label: "Base64 Encode/Decode",href: "/tools/base64" },
+];
+
 export default function Navbar() {
   const { theme, toggle } = useTheme();
   return (
@@ -52,6 +57,12 @@ export default function Navbar() {
         <div className="flex items-center gap-1">
           <NavDropdown label="PDF Tools" links={pdfLinks} />
           <NavDropdown label="Image Tools" links={imageLinks} />
+          <NavDropdown label="Dev Tools" links={devLinks} />
+          <Link href="/blog"
+            className="hidden md:block px-3 py-1.5 rounded-lg text-sm font-medium transition-all hover:opacity-80"
+            style={{ color: "var(--muted)" }}>
+            Blog
+          </Link>
           <div className="w-px h-4 mx-2" style={{ background: "var(--border)" }} />
           <button onClick={toggle} aria-label="Toggle dark mode"
             className="w-8 h-8 rounded-lg flex items-center justify-center transition-all hover:scale-105"
